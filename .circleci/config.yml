@@ -39,5 +39,5 @@ jobs:
           name: Start container and verify it's working
           command: |
             cd ~
-            cd introspecion-deployment/docker
+            cd introspection-deployment/docker
             docker-compose -f docker-compose-build.yaml build --parallel
