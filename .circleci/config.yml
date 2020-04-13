@@ -40,11 +40,11 @@ jobs:
           command: |
             cd ./../cci-demo-docker/introspection-deployment/docker
             ls -a
-            docker-compose -f docker-compose-build.yaml build --parallel
+            docker-compose -f docker-compose-build.yaml build
 
           
       - run:
           name: Push the images
           command: |
-            cd ./../cci-demo-docker/introspection-deployment/docker/
+            cd ./../cci-demo-docker/introspection-deployment/docker
             docker-compose -f docker-compose-build.yaml push
