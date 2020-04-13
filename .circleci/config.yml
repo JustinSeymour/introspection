@@ -39,6 +39,11 @@ jobs:
           name: Start container and verify it's working
           command: |
             cd /go/src/github.com/circleci/cci-demo-docker/introspection-deployment/docker/
-            docker-compose build
+            docker-compose -f docker-compose-build.yaml build --parallel
 
-# docker-compose -f docker-compose-build.yaml build --parallel
+          
+      - run:
+          name: Push the images
+          command: |
+            cd /go/src/github.com/circleci/cci-demo-docker/introspection-deployment/docker/
+            docker-compose -f docker-compose-build.yaml push
