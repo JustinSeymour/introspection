@@ -15,5 +15,5 @@ services:
     image: devshack/introspection-restapi-auth
   frontend:
     build:
-      context: ../../introspection-rest-api-user  
+      context: ../../introspection-restapi-user  
     image: devshack/introspection-rest-api-user 
