@@ -8,6 +8,8 @@ jobs:
     working_directory: ~/code
     steps:
         - checkout
+        - run: cd introspection-rest-api-auth 
+        - run: npm install
         - run:
             name: Setup variables
             command: |
