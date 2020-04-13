@@ -38,4 +38,4 @@ jobs:
       - run:
           name: Start container and verify it's working
           command: |
-            docker-compose -f introspection-deployment/docker/docker-compose-build.yaml build --parallel
+            docker-compose -f ./introspection-deployment/docker/docker-compose-build.yaml build --parallel
