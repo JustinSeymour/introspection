@@ -16,8 +16,8 @@ services:
   backend-user:
     image: devshack/introspection-restapi-user
     environment:
-      URL: "http://localhost:8101"
+      URL: "http://localhost:8100"
   backend-journal:
     image: devshack/introspection-restapi-journal
     environment:
-      URL: "http://localhost:8102"
+      URL: "http://localhost:8100"
