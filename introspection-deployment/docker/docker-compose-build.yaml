@@ -5,15 +5,15 @@ services:
     build:
       context: .
     image: devshack/reverseproxy 
-  backend_user:
+  backend-auth:
     build:
       context: ../../introspection-restapi-auth
     image: devshack/introspection-restapi-auth
-  backend_feed:
+  backend-journal:
     build:
-      context: ../../introspection-restapi-auth  
-    image: devshack/introspection-restapi-auth
-  frontend:
+      context: ../../introspection-restapi-journal  
+    image: devshack/introspection-restapi-journal
+  backend-user:
     build:
       context: ../../introspection-restapi-user  
-    image: devshack/introspection-rest-api-user 
+    image: devshack/introspection-restapi-user 
