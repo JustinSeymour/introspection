@@ -38,5 +38,5 @@ jobs:
       - run:
           name: Start container and verify it's working
           command: |
-            cd ./../introspection-deployment/docker/
+            cd /go/src/github.com/circleci/cci-demo-docker/introspection-deployment/docker/
             docker-compose -f docker-compose-build.yaml build --parallel
