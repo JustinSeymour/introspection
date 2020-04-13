@@ -1,0 +1,23 @@
+{
+  "name": "introspection-restapi-auth",
+  "version": "1.0.0",
+  "description": "Mircoservice for the authentication and authorization service for the introspection application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": " NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=localhost node index.js"
+  },
+  "author": "Justin Seymour",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.656.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-winston": "^4.0.3",
+    "lodash": "^4.17.15",
+    "winston": "^3.2.1",
+    "winston-express": "^0.1.1"
+  }
+}

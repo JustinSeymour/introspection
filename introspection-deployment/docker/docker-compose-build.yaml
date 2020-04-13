@@ -1,0 +1,19 @@
+
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: .
+    image: devshack/reverseproxy 
+  backend_user:
+    build:
+      context: ../../introspection-restapi-auth
+    image: devshack/introspection-restapi-auth
+  backend_feed:
+    build:
+      context: ../../introspection-restapi-auth  
+    image: devshack/introspection-restapi-auth
+  frontend:
+    build:
+      context: ../../introspection-rest-api-user  
+    image: devshack/introspection-rest-api-user 

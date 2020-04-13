@@ -1,0 +1,23 @@
+version: "3"
+services:
+  reverseproxy:
+      image: devshack/reverseproxy
+      ports:
+          - 8080:8080
+      restart: always
+      depends_on:
+        - backend-auth
+        - backend-user
+        - backend-journal     
+  backend-auth:
+    image: devshack/introspection-restapi-auth
+    environment:
+      URL: "http://localhost:8100"
+  backend-user:
+    image: devshack/introspection-restapi-user
+    environment:
+      URL: "http://localhost:8101"
+  backend-journal:
+    image: devshack/introspection-restapi-journal
+    environment:
+      URL: "http://localhost:8102"
