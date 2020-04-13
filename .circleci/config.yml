@@ -38,7 +38,8 @@ jobs:
       - run:
           name: Start container and verify it's working
           command: |
-            cd ./../cci-demo-docker/introspection-deployment/docker/
+            cd ./../cci-demo-docker/
+            ls -a
             docker-compose -f docker-compose-build.yaml build --parallel
 
           
