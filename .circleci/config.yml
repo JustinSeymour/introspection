@@ -38,12 +38,12 @@ jobs:
       - run:
           name: Start container and verify it's working
           command: |
-            cd ./../
-            ls -a
-            docker-compose -f ./../introspection-deployment/docker/docker-compose-build.yaml build --parallel
+            cd ./../cci-demo-docker/introspection-deployment/docker/
+            docker-compose -f docker-compose-build.yaml build --parallel
 
           
       - run:
           name: Push the images
           command: |
-            docker-compose -f ./../introspection-deployment/docker/docker-compose-build.yaml push
+            cd ./../cci-demo-docker/introspection-deployment/docker/
+            docker-compose -f docker-compose-build.yaml push
