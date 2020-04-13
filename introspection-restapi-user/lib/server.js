@@ -11,7 +11,7 @@ const router = require('./router');
 const app = express();
 var cors = require('cors')
 const cookieParser = require('cookie-parser')
-const port = 8100;
+const port = 8080;
 const winston = require('winston');
 const expressWinston = require('express-winston');
 
