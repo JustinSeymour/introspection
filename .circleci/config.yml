@@ -46,5 +46,6 @@ jobs:
       - run:
           name: Push the images
           command: |
+            docker login -u $DOCKER_ORG -p $DOCKER_LOGIN
             cd ./../cci-demo-docker/introspection-deployment/docker
             docker-compose -f docker-compose-build.yaml push
