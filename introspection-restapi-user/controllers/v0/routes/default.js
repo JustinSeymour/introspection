@@ -20,7 +20,7 @@ _._405 = async (req, res) => {
 _._404 = async (req, res) => {
    let code = 404;
    let timestamp = Date.now()
-   return res.status(code).json({'Error':'Resource not found','Service':'introspection-restapi-user','Created':timestamp});
+   return res.status(code).json({'Error':'Resource not found','Service':'introspection-restapi-user','Created':timestamp,'request':req.headers});
 };
 
 // Export the module
