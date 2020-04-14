@@ -8,14 +8,14 @@
 
 // Dependencies
 const express = require('express');
-const journalRouter = require('../controllers/v0/routes/user/user.router');
+const usersRouter = require('../controllers/v0/routes/users/users.router');
 const def = require('../controllers/v0/routes/defaults/default');
 
 // Create the module to export
 let _ = express.Router();
 
 // Any route with /api/v0/auth will pipe requests to authRouter middleware
-_.use('/users', journalRouter )
+_.use('/users', usersRouter )
 
 // 404 Handler for any unhandled requests at this level
 _.all('*',def._404);
