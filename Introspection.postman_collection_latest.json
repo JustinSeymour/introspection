@@ -14,11 +14,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/ping",
+							"raw": "{{host}}/auth/ping",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"auth",
 								"ping"
 							]
 						}
@@ -64,11 +65,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/ping",
+							"raw": "{{host}}/journals/ping",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"journals",
 								"ping"
 							]
 						}
@@ -133,9 +135,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}journals?_id=413917c8-798e-48d7-9cdc-0f5f26484f53",
+							"raw": "{{host}}/journals?_id=413917c8-798e-48d7-9cdc-0f5f26484f53",
 							"host": [
-								"{{host}}journals"
+								"{{host}}"
+							],
+							"path": [
+								"journals"
 							],
 							"query": [
 								{
@@ -200,7 +205,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"title\":\"Simply the best\",\n\t\"status\":\"complete\"\n}",
+							"raw": "{\n\t\"title\":\"Simply the best, better than the best\",\n\t\"status\":\"complete\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -208,7 +213,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/journals?_id=c52991c0-2c4c-4a0c-b9ae-00cf78bb832e",
+							"raw": "{{host}}/journals?_id=2932b16c-0dd4-4ac1-a40f-be9e4a0bbacd",
 							"host": [
 								"{{host}}"
 							],
@@ -218,7 +223,7 @@
 							"query": [
 								{
 									"key": "_id",
-									"value": "c52991c0-2c4c-4a0c-b9ae-00cf78bb832e"
+									"value": "2932b16c-0dd4-4ac1-a40f-be9e4a0bbacd"
 								}
 							]
 						},
@@ -242,7 +247,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/journals?_id=c52991c0-2c4c-4a0c-b9ae-00cf78bb832e",
+							"raw": "{{host}}/journals?_id=b11ff84d-8cbf-4fb1-b251-99cb86f392e8",
 							"host": [
 								"{{host}}"
 							],
@@ -252,7 +257,7 @@
 							"query": [
 								{
 									"key": "_id",
-									"value": "c52991c0-2c4c-4a0c-b9ae-00cf78bb832e"
+									"value": "b11ff84d-8cbf-4fb1-b251-99cb86f392e8"
 								}
 							]
 						}
@@ -293,11 +298,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/ping",
+							"raw": "{{host}}/users/ping",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
+								"users",
 								"ping"
 							]
 						}
@@ -358,7 +364,7 @@
 	],
 	"variable": [
 		{
-			"id": "c8bb93e0-4e44-4186-a51b-b6fc9cd35d78",
+			"id": "ea0570d9-a530-4a31-8ccb-9382ae100654",
 			"key": "host",
 			"value": "http://introspection-staging-elb1-1053492ede6ed08f.elb.us-east-2.amazonaws.com/api/v0",
 			"type": "string"
