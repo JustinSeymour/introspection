@@ -7,7 +7,7 @@
 
 // Dependencies
 const { get } = require('lodash');
-const PayloadError  = require('./../../../../../introspection-restapi-user/controllers/v0/models/errors/payload');
+const PayloadError = require('./../../models/errors/payload');
 const Journal = require('./../../models/journal/journal');
 
 // Create the module to export

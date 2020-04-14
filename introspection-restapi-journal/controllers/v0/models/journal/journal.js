@@ -8,7 +8,7 @@
 // Dependencies
 const base = require('./../dataAccess/mongo');
 const { cloneDeep } = require('lodash');
-const constraints = require('./../../../../../introspection-restapi-user/lib/constraints');
+const constraints = require('./../../../../lib/constraints');
 const validate = require('validate.js');
 
 // Create the module to export

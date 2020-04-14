@@ -8,7 +8,7 @@
 // Dependencies
 const base = require('./../../models/dataAccess/mongo');
 const { cloneDeep } = require('lodash');
-const constraints = require('./../../../../../introspection-restapi-user/lib/constraints');
+const constraints = require('./../../../../lib/constraints');
 const validate = require('validate.js');
 const secretsLib = require('./../../../../lib/secrets');
 const bcrypt = require('bcryptjs');
