@@ -38,14 +38,22 @@ jobs:
       - run:
           name: Start container and verify it's working
           command: |
+            if [ $CIRCLE_BRANCH = 'staging' ]; then
             cd ./../cci-demo-docker/introspection-deployment/docker
-            ls -a
             docker-compose -f docker-compose-build.yaml build
-
+            fi
           
       - run:
           name: Push the images
           command: |
+            if [ $CIRCLE_BRANCH = 'staging' ]; then
             docker login -u $DOCKER_ORG -p $DOCKER_LOGIN
             cd ./../cci-demo-docker/introspection-deployment/docker
             docker-compose -f docker-compose-build.yaml push
+            fi
+      - run: 
+            name: Pull and start images on server
+            command: |
+              if [ $CIRCLE_BRANCH = 'staging' ]; then
+              ssh -o StrictHostKeyChecking=no ${STAGING_SSH_USER}@${STAGING_IP} "/bin/bash ~/deploy/deploy.sh $DOCKER_ORG/$IMAGE_NAME:$TAG $IMAGE_NAME $DOCKER_LOGIN $DOCKER_PWD"
+              fi
