@@ -13,7 +13,11 @@ let _ = {};
 // Handle GET requests
 _.get = async (req, res) => {
    const timestamp = Date.now()
-   res.json({'ping':'successful','service':'intropsection-restpi-user','created':timestamp});
+   res.json({
+      'ping':'successful',
+      'service':'intropsection-restpi-journal',
+      'created':timestamp
+   });
 };
 
 // Export the module

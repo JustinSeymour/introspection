@@ -18,7 +18,11 @@ _.get = async (req,res) => {
    try {
 
       const timestamp = Date.now()
-      res.json({ 'message': 'user route successful get', 'service': 'intropsection-restpi-user', 'created': timestamp });
+      res.json({ 
+         'message': 'user route successful get', 
+         'service': 'intropsection-restpi-user', 
+         'created': timestamp 
+      });
 
    } catch(err) {
       // Return a 500, log the error
