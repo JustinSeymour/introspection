@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "22259e93-ffcf-4080-8796-6c17aac95ca1",
+		"name": "Introspection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "introspection-restapi-auth",
+			"item": [
+				{
+					"name": "ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/ping",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"just@in.com\",\n\t\"password\":\"12husksnyhs0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "introspection-restapi-journal",
+			"item": [
+				{
+					"name": "ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/ping",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "journal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1c3RAaW4uY29tIiwibmFtZSI6Imp1c3RpbiIsInVzZXJJZCI6ImUwODMzNzlkLWQwNzMtNDgyYy05MGNjLTNlMjk0YWI4NDA0OCIsImlhdCI6MTU4Njg1Nzc5NSwiZXhwIjoxNTg2OTQ0MTk1fQ.rG1hmts_ud5Icb2HqLVQGItydij6TW1wL1ZP52MOFp8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"A great day!\",\n\t\"body\":\"This would be the body of the journal, it would be a long body of text.\",\n\t\"tags\": [\"personal\",\"finance\",\"urgent\"],\n\t\"introspection\": {\n\t\t\"successful\":\"I passed my cloud developer nanodegree capstone project\",\n\t\t\"challenge\":\"Missed my excercise session\",\n\t\t\"action\":\"I will train first thing in the morning\"\n\t},\n\t\"category\":\"vocation\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/journals?_id=e083379d-d073-482c-90cc-3e294ab84048",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"journals"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "e083379d-d073-482c-90cc-3e294ab84048"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "journal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1c3RAaW4uY29tIiwibmFtZSI6Imp1c3RpbiIsInVzZXJJZCI6ImUwODMzNzlkLWQwNzMtNDgyYy05MGNjLTNlMjk0YWI4NDA0OCIsImlhdCI6MTU4Njg2NTUyMiwiZXhwIjoxNTg2OTUxOTIyfQ.yQoSRNsEcf_bmS6cTMtWuxTbl0FuUiXPQjAh_RJ47-Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}journals?_id=413917c8-798e-48d7-9cdc-0f5f26484f53",
+							"host": [
+								"{{host}}journals"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "413917c8-798e-48d7-9cdc-0f5f26484f53"
+								}
+							]
+						},
+						"description": "Get journal by id"
+					},
+					"response": []
+				},
+				{
+					"name": "journal get all for user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1c3RAaW4uY29tIiwibmFtZSI6Imp1c3RpbiIsInVzZXJJZCI6ImUwODMzNzlkLWQwNzMtNDgyYy05MGNjLTNlMjk0YWI4NDA0OCIsImlhdCI6MTU4Njg2NTUyMiwiZXhwIjoxNTg2OTUxOTIyfQ.yQoSRNsEcf_bmS6cTMtWuxTbl0FuUiXPQjAh_RJ47-Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/journals/user/?userId=e083379d-d073-482c-90cc-3e294ab84048",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"journals",
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "e083379d-d073-482c-90cc-3e294ab84048"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "journal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1c3RAaW4uY29tIiwibmFtZSI6Imp1c3RpbiIsInVzZXJJZCI6ImUwODMzNzlkLWQwNzMtNDgyYy05MGNjLTNlMjk0YWI4NDA0OCIsImlhdCI6MTU4Njg2NTUyMiwiZXhwIjoxNTg2OTUxOTIyfQ.yQoSRNsEcf_bmS6cTMtWuxTbl0FuUiXPQjAh_RJ47-Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"Simply the best\",\n\t\"status\":\"complete\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/journals?_id=c52991c0-2c4c-4a0c-b9ae-00cf78bb832e",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"journals"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "c52991c0-2c4c-4a0c-b9ae-00cf78bb832e"
+								}
+							]
+						},
+						"description": "Update the journal object"
+					},
+					"response": []
+				},
+				{
+					"name": "journal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1c3RAaW4uY29tIiwibmFtZSI6Imp1c3RpbiIsInVzZXJJZCI6ImUwODMzNzlkLWQwNzMtNDgyYy05MGNjLTNlMjk0YWI4NDA0OCIsImlhdCI6MTU4Njg2NTUyMiwiZXhwIjoxNTg2OTUxOTIyfQ.yQoSRNsEcf_bmS6cTMtWuxTbl0FuUiXPQjAh_RJ47-Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/journals?_id=c52991c0-2c4c-4a0c-b9ae-00cf78bb832e",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"journals"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "c52991c0-2c4c-4a0c-b9ae-00cf78bb832e"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7ea6a908-072f-4487-897b-c6dcc7acbf96",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "680ec43f-cdad-4971-bd17-a9a68ca6f3c4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "introspection-restapi-user",
+			"item": [
+				{
+					"name": "ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/ping",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"justin\",\n\t\"email\":\"just@in.com\",\n\t\"password\":\"12husksnyhs0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ea51a8ac-dffb-40ea-b6dc-0c23f8bc6f5d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a3d44c18-98e6-4bab-9617-8381c13568c1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c8bb93e0-4e44-4186-a51b-b6fc9cd35d78",
+			"key": "host",
+			"value": "http://introspection-staging-elb1-1053492ede6ed08f.elb.us-east-2.amazonaws.com/api/v0",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

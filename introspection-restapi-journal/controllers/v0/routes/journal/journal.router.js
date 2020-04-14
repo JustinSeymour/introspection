@@ -41,9 +41,13 @@ async function requireAuth(req, res, next) {
    }
 
 // Journal routes
+_.put('/', requireAuth,journal.put);
 _.post('/', requireAuth, journal.post);
-// _.get('/', requireAuth, journal.get);
-_.all('/', requireAuth, def._405);
+_.get('/', requireAuth, journal.get);
+
+_.delete('/', requireAuth,journal.delete);
+_.get('/user', requireAuth, journal.getAll);
+
 
 // Ping routes
 _.get('/ping', requireAuth, ping.get);

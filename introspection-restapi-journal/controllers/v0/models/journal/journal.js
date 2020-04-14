@@ -18,36 +18,112 @@ let _ = class extends base {
    constructor(id = false) {
 
       // Set the defaults
-      super();
+      console.log("From model  \n"+id);
 
       if(id) {
-
+         super();
          // Set the specified _id
-         let msg = validate.single(userId, constraints.uuid());
+         let msg = validate.single(id, constraints.uuid());
          if(msg) {
             this.err = msg;
          } else {
-            this._id = format.path(userId);
+            this._id = id;
+            console.log("THis  \n"+this._id);
          };
 
-      } 
-      this.userId;
-      this.title = false;
-      this.body = false;
-      this.tags = [];
-      this.introspection = {
-         'successful': false,
-         'challenge': false,
-         'action': false
+      } else {
+         super();
+         this.userId;
+         this.title = false;
+         this.body = false;
+         this.tags = [];
+         this.introspection = {
+            'successful': false,
+            'challenge': false,
+            'action': false
+         }
+         this.status = 'incomplete';
+         this.category = false;
       }
-      this.status = 'incomplete';
-      this.category = false;
+      
 
    }
 
    async save() {
       super.save('journals');
    };
+
+   async load() {
+      await super.load('journals');
+   }
+
+   async update() {
+      await super.update('journals');
+   }
+
+   async del(_id) {
+      await super.del('journals', _id)
+   }
+
+   async getJournalsForUser(userId) {
+
+      const searchObject = {userId: userId}
+      const projection = { projection: { userId: 0} }; 
+      const data = await super.loadItems('journals', searchObject, projection);
+      
+      if(!data) return false;
+      
+      return data; 
+     
+   }
+
+   async setJournalData() {
+      
+      try {
+        let journal = await this.loadItem('journals', {_id: this._id});
+        
+        for(let key in journal) {
+         this[key] = journal[key];
+        }
+      
+      } catch (err) {
+         throw(new Error(err));
+      }
+   }
+
+   async setPutData(data) {
+      let msg;
+      // Construct the query parameter
+      if(!data) return msg = ["No data has been sent to update"];
+      
+      if(data.title) {
+         this.title = data.title
+      }
+
+      if(data.body) {
+         this.body = data.body
+      }
+
+      if(data.tags) {
+         this.tags = data.tags
+      }
+
+      if(data.introspection) {
+         this.introspection = introspection
+      }
+
+      if(data.status) {
+         this.status = data.status
+      }
+
+      if(data.category) {
+         this.category = category
+      }
+
+      return;
+
+      // Construct the newValue object, sanitize
+   }
 
    async setUserId(_id) {
 
