@@ -6,9 +6,9 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 RUN npm ci 
-
-RUN npm start & sleep 10 && npm test
 # Bundle app source
 COPY . .
+RUN npm start & sleep 10 && npm test
+
 EXPOSE 8080
 CMD [ "npm", "run", "start" ]
