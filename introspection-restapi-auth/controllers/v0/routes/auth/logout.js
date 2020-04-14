@@ -2,7 +2,7 @@
  * Introspection App
  * Author: Justin Seymour
  *
- * Handlers for the Email validation routes
+ * Handlers for the logout routes
  */
 
 // Dependencies
@@ -12,15 +12,20 @@ const { get } = require('lodash');
 let _ = {};
 
 // Get requests
-_.get = async (req,res) => {
+_.get = async (req, res) => {
 
 
    try {
 
       const timestamp = Date.now()
-      res.json({ 'message': 'Login route successful get', 'service': 'intropsection-restpi-auth', 'created': timestamp });
 
-   } catch(err) {
+      return res.status(202).json({
+         'Message': 'Successfully reached logout',
+         'Service': 'introspection-restapi-auth',
+         'Created': timestamp
+      });
+
+   } catch (err) {
       // Return a 500, log the error
       res.status(500).end();
    }
@@ -28,4 +33,5 @@ _.get = async (req,res) => {
 
 }
 
+// Export the module
 module.exports = _;

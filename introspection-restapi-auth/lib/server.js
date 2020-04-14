@@ -43,11 +43,11 @@ if (process.env.NODE_ENV === 'localhost') {
 
 
 // Set the logger
-// app.use(expressWinston.logger({
-//    'transports': [
-//       new winston.transports.Console()
-//    ]
-// }));
+app.use(expressWinston.logger({
+   'transports': [
+      new winston.transports.Console()
+   ]
+}));
 
 // Parse all requests as JSON
 app.use(express.json());
