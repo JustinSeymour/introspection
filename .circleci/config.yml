@@ -38,10 +38,8 @@ jobs:
       - run:
           name: Start container and verify it's working
           command: |
-            if [ $CIRCLE_BRANCH = 'staging' ]; then
             cd ./../cci-demo-docker/introspection-deployment/docker
             docker-compose -f docker-compose-build.yaml build
-            fi
           
       - run:
           name: Push the images
