@@ -47,7 +47,7 @@ jobs:
           name: Push the images
           command: |
             if [ $CIRCLE_BRANCH = 'staging' ]; then
-            docker login -u $DOCKER_ORG -p $DOCKER_LOGIN
+            docker login -u $DOCKER_ORG -p $DOCKER_PWD
             cd ./../cci-demo-docker/introspection-deployment/docker
             docker-compose -f docker-compose-build.yaml push
             fi
