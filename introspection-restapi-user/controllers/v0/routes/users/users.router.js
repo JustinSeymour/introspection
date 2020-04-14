@@ -16,7 +16,8 @@ const users = require('../users/users');
 let _ = express.Router();
 
 // User routes
-_.get('/',users.get);
+_.post('/',users.post);
+// _.get('/',users.get);
 _.all('/',def._405);
 
 // Ping routes

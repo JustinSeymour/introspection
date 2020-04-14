@@ -22,7 +22,7 @@ _.get('/ping',ping.get);
 _.all('/ping',def._405);
 
 // Login routes
-_.get('/login',login.get);
+_.post('/login',login.post);
 _.all('/login',def._405);
 
 // Logout routes

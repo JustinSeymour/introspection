@@ -8,6 +8,7 @@
 // Dependencies
 const secrets = require('./lib/secrets');
 const server = require('./lib/server');
+const mongo = require('./lib/mongo');
 
 // Create module to export
 let _  = {};
@@ -18,6 +19,7 @@ _.run = async () => {
 
         let secretData = await secrets.load();
 
+        await mongo.start();
         await server.start();
 
         return true;
