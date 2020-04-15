@@ -9,6 +9,7 @@
 const { get } = require('lodash');
 const PayloadError = require('./../../models/errors/payload');
 const Login = require('./../../models/auth/login');
+const CloudWatch = require('./../../../../lib/cloudwatch');
 
 // Create the module to export
 let _ = {};
@@ -23,6 +24,9 @@ _.get = async (req,res) => {
 
    } catch(err) {
       // Return a 500, log the error
+      let cw = new CloudWatch();
+      let error = {error:err,route:'auth',mehtod:'GET'};
+      await cw.sendEvent(JSON.stringify(error), 'API error', ['introspecion'], 'introspection-restapi-auth');
       res.status(500).end();
    }
 
@@ -65,6 +69,9 @@ _.post = async (req,res) => {
    } catch(err) {
       // Return a 500, log the error
       console.log("Error from login route:  \n"+err);
+      let cw = new CloudWatch();
+      let error = {error:err,route:'auth',mehtod:'POST'};
+      await cw.sendEvent(JSON.stringify(error), 'API error', ['introspecion'], 'introspection-restapi-auth');
       res.status(500).end();
    }
 

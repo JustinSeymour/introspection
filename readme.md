@@ -17,9 +17,11 @@ Datastores: Mongodb
 ## Contents
 
 1. [Architecture](#Architecture)
-2. Installation
-3. Continous deployment
-4. Testing
+2. [Installation](#Installation)
+3. [Continous deployment](#Continous-deployment)
+4. [Kuberenetes](#Kubernetes)
+5. [Testing](#Testing)
+6. [CloudWatch](#CloudWatch)
 
 #### Architecture
 
@@ -52,11 +54,18 @@ The CI/CD strategy uses CircleCI for its operations. The configuration for this 
 
 The application will be deployed only when pushing the staging branch.
 
+#### Kubernetes
+
+Configuration for kubernets can be found in the deployment -> k8s folder. There are files for deployments and services. 
+Insert aws config in aws-config.yaml.
+
 #### Testing
 
 Testing can be conducted with Postman, there is a collection that can be imported. It is found in the root folder.
 
 The user api has got support for jest test runner, and will be included in future builders.
 
+#### CloudWatch
 
-
+Classes for cloud watch are provided in each of the microservice apis. The class can be found in the lib folder.
+An example of sending events can be seen in the auth api, login route.
