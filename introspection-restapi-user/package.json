@@ -19,7 +19,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-winston": "^4.0.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mongodb": "^3.5.5",
     "uuid": "^7.0.3",
     "validate.js": "^0.13.1",
